@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Catalog — Admin — Bells Bliss N More</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header admin-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">B</span>
+      <span class="brand-text">Bells Bliss N More<span class="admin-badge">Admin</span></span>
+    </a>
+    <nav class="main-nav" aria-label="Admin">
+      <a href="admin-dashboard.html">Dashboard</a>
+      <a href="admin-bookings.html">Bookings</a>
+      <a href="admin-catalog.html" aria-current="page">Catalog</a>
+      <a href="admin-reviews.html">Reviews</a>
+    </nav>
+    <div class="header-actions">
+      <a class="btn btn-secondary" href="index.html">Log Out</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <p class="breadcrumb"><a href="admin-dashboard.html">Dashboard</a> / Catalog</p>
+  <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+    <h1 style="margin:0;">Manage catalog</h1>
+    <a class="btn btn-primary" href="admin-catalog-item-edit.html">+ Add New Item</a>
+  </div>
+
+  <div class="table-wrap" style="margin-top:1.5rem;">
+    <table>
+      <thead>
+        <tr><th scope="col">Item</th><th scope="col">Category</th><th scope="col">Price</th><th scope="col">Sale price</th><th scope="col"><span class="visually-hidden">Actions</span></th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>White Foldable Table</td>
+          <td>Tables &amp; Chairs</td>
+          <td>$15.00</td>
+          <td>—</td>
+          <td><a class="btn btn-secondary btn-small" href="admin-catalog-item-edit.html">Edit</a> <button class="btn-danger btn-small" style="border:none; background:none;" onclick="this.closest('tr').remove()">Remove</button></td>
+        </tr>
+        <tr>
+          <td>White Resin Foldable Chair</td>
+          <td>Tables &amp; Chairs</td>
+          <td>$3.00</td>
+          <td>—</td>
+          <td><a class="btn btn-secondary btn-small" href="admin-catalog-item-edit.html">Edit</a> <button class="btn-danger btn-small" style="border:none; background:none;" onclick="this.closest('tr').remove()">Remove</button></td>
+        </tr>
+        <tr>
+          <td>Backdrop Arch &amp; Cover</td>
+          <td>Décor &amp; Signage</td>
+          <td><span class="price-was">$55.00</span></td>
+          <td>$45.00 <span class="price-save">Save 18%</span></td>
+          <td><a class="btn btn-secondary btn-small" href="admin-catalog-item-edit.html">Edit</a> <button class="btn-danger btn-small" style="border:none; background:none;" onclick="this.closest('tr').remove()">Remove</button></td>
+        </tr>
+        <tr>
+          <td>Neon "Happy Birthday" Sign</td>
+          <td>Décor &amp; Signage</td>
+          <td><span class="price-was">$40.00</span></td>
+          <td>$35.00 <span class="price-save">Save 13%</span></td>
+          <td><a class="btn btn-secondary btn-small" href="admin-catalog-item-edit.html">Edit</a> <button class="btn-danger btn-small" style="border:none; background:none;" onclick="this.closest('tr').remove()">Remove</button></td>
+        </tr>
+        <tr>
+          <td>Table Setting (per place)</td>
+          <td>Table Settings</td>
+          <td>$8.00</td>
+          <td>—</td>
+          <td><a class="btn btn-secondary btn-small" href="admin-catalog-item-edit.html">Edit</a> <button class="btn-danger btn-small" style="border:none; background:none;" onclick="this.closest('tr').remove()">Remove</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>Bells Bliss N More Admin · Internal use only</p>
+    <p class="proto-map-link"><a href="prototype-map.html">Prototype Map (for review)</a></p>
+  </div>
+</footer>
+</body>
+</html>
