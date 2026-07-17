@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My Account — Bells Bliss N More</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">B</span>
+      <span class="brand-text">Bells Bliss N More</span>
+    </a>
+    <nav class="main-nav" aria-label="Main">
+      <a href="catalog.html">Rentals</a>
+      <a href="planning-services.html">Planning</a>
+    </nav>
+    <div class="header-actions">
+      <a class="icon-link" href="cart.html" aria-label="View cart, 0 items">🛒<span class="cart-count">0</span></a>
+      <a class="btn btn-secondary" href="index.html">Log Out</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <p class="breadcrumb"><a href="index.html">Home</a> / My Account</p>
+  <h1>Welcome back, Maria</h1>
+  <p style="color:var(--color-text-muted); margin-top:-0.75rem;">maria@example.com · Registered customer</p>
+
+  <a class="btn btn-primary" href="catalog.html" style="margin:1rem 0 2rem; display:inline-block;">Book Another Event</a>
+
+  <h2 style="font-size:1.1rem;">Your bookings</h2>
+
+  <div class="grid" style="grid-template-columns:1fr; gap:1rem;">
+    <div class="card">
+      <div class="card-body">
+        <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.5rem;">
+          <div>
+            <h3 style="margin:0;">Booking #BBM-10482 — Birthday Party</h3>
+            <p class="muted" style="margin:0.2rem 0 0;">Event date: August 9, 2026</p>
+          </div>
+          <div style="text-align:right;">
+            <span class="status-badge status-confirmed">Confirmed</span>
+            <span class="status-badge status-paid">Paid — $245.00</span>
+          </div>
+        </div>
+        <button class="btn btn-secondary btn-small" style="margin-top:0.75rem; width:fit-content;" onclick="toggleComm('comm-1')" aria-expanded="false" aria-controls="comm-1">View communication history</button>
+        <ul class="comm-log" id="comm-1" hidden style="margin-top:0.75rem;">
+          <li>Order confirmation sent<div class="comm-meta">Email · Jul 2, 2026</div></li>
+          <li>Delivery time window confirmed for 9am–11am<div class="comm-meta">Email · Aug 5, 2026</div></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+        <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.5rem;">
+          <div>
+            <h3 style="margin:0;">Booking #BBM-09217 — Baby Shower</h3>
+            <p class="muted" style="margin:0.2rem 0 0;">Event date: March 14, 2026 (past)</p>
+          </div>
+          <div style="text-align:right;">
+            <span class="status-badge status-confirmed">Completed</span>
+            <span class="status-badge status-paid">Paid — $180.00</span>
+          </div>
+        </div>
+        <button class="btn btn-secondary btn-small" style="margin-top:0.75rem; width:fit-content;" onclick="toggleComm('comm-2')" aria-expanded="false" aria-controls="comm-2">View communication history</button>
+        <ul class="comm-log" id="comm-2" hidden style="margin-top:0.75rem;">
+          <li>Order confirmation sent<div class="comm-meta">Email · Mar 1, 2026</div></li>
+          <li>Thank-you note &amp; review request sent<div class="comm-meta">Email · Mar 16, 2026</div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-tagline">Where Every Detail Tells Your Story</p>
+    <p class="footer-contact">
+      <span class="footer-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1v3.2c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3.5c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z" fill="currentColor"/></svg> 206-321-7416</span>
+      <span class="footer-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm1.4 2 7.1 6.1a1 1 0 0 0 1 0L19.6 7H4.4z" fill="currentColor"/></svg> info@bellsblissnmore.com</span>
+      <span class="footer-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z" fill="currentColor"/></svg> 448 S 190th St, Burien WA 98148</span>
+    </p>
+    <p class="proto-map-link"><a href="prototype-map.html">Prototype Map (for review)</a></p>
+  </div>
+</footer>
+
+<script>
+  function toggleComm(id) {
+    var el = document.getElementById(id);
+    var btn = document.querySelector('[aria-controls="' + id + '"]');
+    var willShow = el.hidden;
+    el.hidden = !willShow;
+    btn.setAttribute('aria-expanded', String(willShow));
+    btn.textContent = willShow ? 'Hide communication history' : 'View communication history';
+  }
+</script>
+</body>
+</html>

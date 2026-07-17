@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Checkout — Bells Bliss N More</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">B</span>
+      <span class="brand-text">Bells Bliss N More</span>
+    </a>
+    <nav class="main-nav" aria-label="Main">
+      <a href="catalog.html">Rentals</a>
+      <a href="planning-services.html">Planning</a>
+    </nav>
+    <div class="header-actions">
+      <a class="icon-link" href="cart.html" aria-label="View cart, items in cart">🛒<span class="cart-count">3</span></a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <p class="breadcrumb"><a href="index.html">Home</a> / <a href="cart.html">Cart</a> / Checkout</p>
+  <h1>Checkout</h1>
+
+  <div role="tablist" class="tabs" aria-label="Checkout method">
+    <button role="tab" id="tab-guest" aria-selected="true" aria-controls="panel-guest" class="tab-btn" onclick="switchTab('guest')">Guest Checkout</button>
+    <button role="tab" id="tab-login" aria-selected="false" aria-controls="panel-login" class="tab-btn" onclick="switchTab('login')">Log In</button>
+  </div>
+
+  <div class="two-col">
+    <div>
+      <div id="panel-guest" role="tabpanel" aria-labelledby="tab-guest" class="tab-panel">
+        <form onsubmit="event.preventDefault(); window.location.href='order-confirmation.html';">
+          <fieldset>
+            <legend>Contact information</legend>
+            <div class="field-row">
+              <div class="field"><label for="g-name">Full name</label><input type="text" id="g-name" required></div>
+              <div class="field"><label for="g-email">Email</label><input type="email" id="g-email" required></div>
+            </div>
+            <div class="field"><label for="g-phone">Phone</label><input type="tel" id="g-phone" required></div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Event &amp; delivery address</legend>
+            <div class="field"><label for="g-address">Event address</label><input type="text" id="g-address" required></div>
+            <div class="checkbox-row">
+              <input type="checkbox" id="g-same-address" checked>
+              <label for="g-same-address">Delivery address is the same as the event address</label>
+            </div>
+            <div class="field"><label for="g-notes">Special requests or notes (optional)</label><textarea id="g-notes" rows="3"></textarea></div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Payment</legend>
+            <div class="payment-box">
+              Secure payment — hosted by our payment processor. Bells Bliss N More never sees or stores your full card number.
+              <div class="field-row" style="margin-top:0.75rem;">
+                <div class="field"><label for="g-card">Card number</label><input type="text" id="g-card" placeholder="•••• •••• •••• ••••" inputmode="numeric"></div>
+                <div class="field"><label for="g-exp">Expiry</label><input type="text" id="g-exp" placeholder="MM/YY"></div>
+                <div class="field"><label for="g-cvc">CVC</label><input type="text" id="g-cvc" placeholder="•••" inputmode="numeric"></div>
+              </div>
+            </div>
+          </fieldset>
+
+          <div class="checkbox-row">
+            <input type="checkbox" id="g-create-account">
+            <label for="g-create-account">Create an account so I can track this order and book faster next time</label>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">Place Order — $245.00</button>
+        </form>
+      </div>
+
+      <div id="panel-login" role="tabpanel" aria-labelledby="tab-login" class="tab-panel" hidden>
+        <p>Log in to check out faster using your saved details.</p>
+        <form onsubmit="event.preventDefault();">
+          <div class="field"><label for="l-email">Email</label><input type="email" id="l-email" required></div>
+          <div class="field"><label for="l-password">Password</label><input type="password" id="l-password" required></div>
+          <a class="btn btn-primary btn-block" href="account-dashboard.html">Log In &amp; Continue</a>
+        </form>
+        <p style="margin-top:1rem;">New here? <a href="create-account.html">Create an account</a> instead.</p>
+      </div>
+    </div>
+
+    <aside class="summary-box" aria-label="Order summary">
+      <h2 style="margin-top:0; font-size:1.1rem;">Order summary</h2>
+      <div class="summary-line"><span>Neon "Happy Birthday" Sign</span><span>$35.00</span></div>
+      <div class="summary-line"><span>White Resin Chairs ×20</span><span>$60.00</span></div>
+      <div class="summary-line"><span>Day-Of Coordination</span><span>$150.00</span></div>
+      <div class="summary-line"><span>Sale savings</span><span>−$5.00</span></div>
+      <div class="summary-line total"><span>Total</span><span>$245.00</span></div>
+    </aside>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-tagline">Where Every Detail Tells Your Story</p>
+    <p class="footer-contact">
+      <span class="footer-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1v3.2c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3.5c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z" fill="currentColor"/></svg> 206-321-7416</span>
+      <span class="footer-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm1.4 2 7.1 6.1a1 1 0 0 0 1 0L19.6 7H4.4z" fill="currentColor"/></svg> info@bellsblissnmore.com</span>
+      <span class="footer-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z" fill="currentColor"/></svg> 448 S 190th St, Burien WA 98148</span>
+    </p>
+    <p class="proto-map-link"><a href="prototype-map.html">Prototype Map (for review)</a></p>
+  </div>
+</footer>
+
+<script>
+  function switchTab(name) {
+    var isGuest = name === 'guest';
+    document.getElementById('tab-guest').setAttribute('aria-selected', isGuest ? 'true' : 'false');
+    document.getElementById('tab-login').setAttribute('aria-selected', isGuest ? 'false' : 'true');
+    document.getElementById('panel-guest').hidden = !isGuest;
+    document.getElementById('panel-login').hidden = isGuest;
+  }
+</script>
+</body>
+</html>

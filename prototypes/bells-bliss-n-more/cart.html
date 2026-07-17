@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Cart — Bells Bliss N More</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">B</span>
+      <span class="brand-text">Bells Bliss N More</span>
+    </a>
+    <nav class="main-nav" aria-label="Main">
+      <a href="catalog.html">Rentals</a>
+      <a href="planning-services.html">Planning</a>
+    </nav>
+    <div class="header-actions">
+      <a class="icon-link" href="cart.html" aria-label="View cart, items in cart" aria-current="page">🛒<span class="cart-count" id="cart-count">3</span></a>
+      <a class="btn btn-secondary" href="login.html">Log In</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <p class="breadcrumb"><a href="index.html">Home</a> / Cart</p>
+  <h1>Your booking</h1>
+  <p style="color:var(--color-text-muted); margin-top:-0.5rem;">Rentals and planning services combine into one order — one checkout, one payment.</p>
+
+  <div class="two-col" style="margin-top:1.5rem;">
+    <div>
+      <div class="table-wrap">
+        <table>
+          <caption class="visually-hidden">Items in your cart</caption>
+          <thead>
+            <tr><th scope="col">Item</th><th scope="col">Type</th><th scope="col">Qty</th><th scope="col">Price</th><th scope="col"><span class="visually-hidden">Remove</span></th></tr>
+          </thead>
+          <tbody id="cart-rows">
+            <tr data-line="sign">
+              <td>Neon "Happy Birthday" Sign</td>
+              <td>Rental</td>
+              <td>
+                <button class="btn btn-secondary btn-small" onclick="changeQty('sign', -1)" aria-label="Decrease quantity">−</button>
+                <span id="qty-sign">1</span>
+                <button class="btn btn-secondary btn-small" onclick="changeQty('sign', 1)" aria-label="Increase quantity">+</button>
+              </td>
+              <td><span class="price-was">$40</span> <span class="price-current">$35</span></td>
+              <td><button class="btn-danger btn-small" style="border:none; background:none;" onclick="removeLine('sign')">Remove</button></td>
+            </tr>
+            <tr data-line="chairs">
+              <td>White Resin Foldable Chair</td>
+              <td>Rental</td>
+              <td>
+                <button class="btn btn-secondary btn-small" onclick="changeQty('chairs', -1)" aria-label="Decrease quantity">−</button>
+                <span id="qty-chairs">20</span>
+                <button class="btn btn-secondary btn-small" onclick="changeQty('chairs', 1)" aria-label="Increase quantity">+</button>
+              </td>
+              <td>$3 each</td>
+              <td><button class="btn-danger btn-small" style="border:none; background:none;" onclick="removeLine('chairs')">Remove</button></td>
+            </tr>
+            <tr data-line="planning">
+              <td>Day-Of Coordination</td>
+              <td>Planning Service</td>
+              <td>1</td>
+              <td>$150</td>
+              <td><button class="btn-danger btn-small" style="border:none; background:none;" onclick="removeLine('planning')">Remove</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p id="empty-cart" class="empty-state" hidden>Your cart is empty. <a href="catalog.html">Browse the catalog</a> to get started.</p>
+
+      <fieldset style="margin-top:1.5rem;">
+        <legend>Event details</legend>
+        <div class="field-row">
+          <div class="field">
+            <label for="event-date">Event date</label>
+            <input type="date" id="event-date" name="event-date">
+          </div>
+          <div class="field">
+            <label for="event-type">Event type</label>
+            <select id="event-type" name="event-type">
+              <option>Birthday</option>
+              <option>Wedding</option>
+              <option>Graduation</option>
+              <option>Baby Shower</option>
+              <option>Corporate Event</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="guest-count">Estimated guest count</label>
+            <input type="number" id="guest-count" name="guest-count" min="1">
+          </div>
+        </div>
+      </fieldset>
+
+      <p style="margin-top:1.5rem;"><a href="catalog.html">&larr; Continue browsing rentals</a> · <a href="planning-services.html">Add another planning service</a></p>
+    </div>
+
+    <aside class="summary-box" aria-label="Order summary">
+      <h2 style="margin-top:0; font-size:1.1rem;">Order summary</h2>
+      <div class="summary-line"><span>Rentals subtotal</span><span>$95.00</span></div>
+      <div class="summary-line"><span>Planning services</span><span>$150.00</span></div>
+      <div class="summary-line"><span>Sale savings</span><span>−$5.00</span></div>
+      <div class="summary-line total"><span>Total due at checkout</span><span>$245.00</span></div>
+      <a class="btn btn-primary btn-block" style="margin-top:1rem;" href="checkout.html">Proceed to Checkout</a>
+    </aside>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-tagline">Where Every Detail Tells Your Story</p>
+    <p class="footer-contact">
+      <span class="footer-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1v3.2c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3.5c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z" fill="currentColor"/></svg> 206-321-7416</span>
+      <span class="footer-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm1.4 2 7.1 6.1a1 1 0 0 0 1 0L19.6 7H4.4z" fill="currentColor"/></svg> info@bellsblissnmore.com</span>
+      <span class="footer-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z" fill="currentColor"/></svg> 448 S 190th St, Burien WA 98148</span>
+    </p>
+    <p class="proto-map-link"><a href="prototype-map.html">Prototype Map (for review)</a></p>
+  </div>
+</footer>
+
+<script>
+  var qty = { sign: 1, chairs: 20 };
+  function changeQty(line, delta) {
+    if (!(line in qty)) return;
+    qty[line] = Math.max(1, qty[line] + delta);
+    document.getElementById('qty-' + line).textContent = qty[line];
+  }
+  function removeLine(line) {
+    var row = document.querySelector('tr[data-line="' + line + '"]');
+    if (row) row.remove();
+    if (document.querySelectorAll('#cart-rows tr').length === 0) {
+      document.getElementById('empty-cart').hidden = false;
+    }
+  }
+</script>
+</body>
+</html>

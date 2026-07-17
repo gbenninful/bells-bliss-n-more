@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Edit Review — Admin — Bells Bliss N More</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header admin-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">B</span>
+      <span class="brand-text">Bells Bliss N More<span class="admin-badge">Admin</span></span>
+    </a>
+    <nav class="main-nav" aria-label="Admin">
+      <a href="admin-dashboard.html">Dashboard</a>
+      <a href="admin-bookings.html">Bookings</a>
+      <a href="admin-catalog.html">Catalog</a>
+      <a href="admin-reviews.html" aria-current="page">Reviews</a>
+    </nav>
+    <div class="header-actions">
+      <a class="btn btn-secondary" href="index.html">Log Out</a>
+    </div>
+  </div>
+</header>
+
+<main id="main" style="max-width:640px;">
+  <p class="breadcrumb"><a href="admin-dashboard.html">Dashboard</a> / <a href="admin-reviews.html">Reviews</a> / Edit Review</p>
+  <h1>Review from Viki Filovets</h1>
+
+  <form onsubmit="event.preventDefault(); window.location.href='admin-reviews.html';">
+    <div class="field-row">
+      <div class="field">
+        <label for="reviewer-name">Reviewer name</label>
+        <input type="text" id="reviewer-name" value="Viki Filovets" required>
+      </div>
+      <div class="field">
+        <label for="review-rating">Rating</label>
+        <select id="review-rating">
+          <option>5 stars</option>
+          <option>4 stars</option>
+          <option>3 stars</option>
+          <option>2 stars</option>
+          <option>1 star</option>
+        </select>
+      </div>
+    </div>
+    <div class="field">
+      <label for="review-date">Date shown (e.g. "a week ago", "March 2026")</label>
+      <input type="text" id="review-date" value="a week ago">
+    </div>
+    <div class="field">
+      <label for="review-text">Review text</label>
+      <textarea id="review-text" rows="6">Very good team to work with! They were super easy to communicate with, very responsive, and so kind throughout the whole process. Everything was smooth and stress-free, and they even helped me load the chairs, which I really appreciated. Such great customer service — I would definitely use them again and highly recommend them to anyone needing rentals for an event!</textarea>
+      <p class="field-hint">Reproduce the reviewer's own words as written — don't edit for grammar or tone.</p>
+    </div>
+
+    <div class="checkbox-row">
+      <input type="checkbox" id="review-featured" checked>
+      <label for="review-featured">Featured on homepage (max 6 featured at a time)</label>
+    </div>
+
+    <div style="display:flex; gap:1rem;">
+      <button type="submit" class="btn btn-primary">Save Review</button>
+      <a class="btn btn-secondary" href="admin-reviews.html">Cancel</a>
+    </div>
+  </form>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>Bells Bliss N More Admin · Internal use only</p>
+    <p class="proto-map-link"><a href="prototype-map.html">Prototype Map (for review)</a></p>
+  </div>
+</footer>
+</body>
+</html>

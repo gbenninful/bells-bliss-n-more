@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reviews — Admin — Bells Bliss N More</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header admin-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">B</span>
+      <span class="brand-text">Bells Bliss N More<span class="admin-badge">Admin</span></span>
+    </a>
+    <nav class="main-nav" aria-label="Admin">
+      <a href="admin-dashboard.html">Dashboard</a>
+      <a href="admin-bookings.html">Bookings</a>
+      <a href="admin-catalog.html">Catalog</a>
+      <a href="admin-reviews.html" aria-current="page">Reviews</a>
+    </nav>
+    <div class="header-actions">
+      <a class="btn btn-secondary" href="index.html">Log Out</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <p class="breadcrumb"><a href="admin-dashboard.html">Dashboard</a> / Reviews</p>
+  <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+    <div>
+      <h1 style="margin:0;">Manage reviews</h1>
+      <p style="color:var(--color-text-muted); margin:0.25rem 0 0;">Featured reviews appear on the homepage (max 6). Everything appears on the full <a href="reviews.html">Reviews page</a>.</p>
+    </div>
+    <a class="btn btn-primary" href="admin-review-edit.html">+ Add New Review</a>
+  </div>
+
+  <div class="table-wrap" style="margin-top:1.5rem;">
+    <table>
+      <thead>
+        <tr><th scope="col">Reviewer</th><th scope="col">Rating</th><th scope="col">Review</th><th scope="col">Date</th><th scope="col">Featured</th><th scope="col"><span class="visually-hidden">Actions</span></th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Viki Filovets</td>
+          <td><span class="review-stars" style="font-size:0.85rem;">★★★★★</span></td>
+          <td style="max-width:280px;">Very good team to work with! They were super easy to communicate with, very responsive&hellip;</td>
+          <td>a week ago</td>
+          <td>
+            <label class="checkbox-row" style="gap:0.4rem;">
+              <input type="checkbox" checked onchange="toggleFeatured(this)">
+              <span class="featured-badge">Featured</span>
+            </label>
+          </td>
+          <td><a class="btn btn-secondary btn-small" href="admin-review-edit.html">Edit</a> <button class="btn-danger btn-small" style="border:none; background:none;" onclick="if(confirm('Delete this review? This cannot be undone.')) this.closest('tr').remove()">Delete</button></td>
+        </tr>
+        <tr>
+          <td>Keianna Nguyen</td>
+          <td><span class="review-stars" style="font-size:0.85rem;">★★★★★</span></td>
+          <td style="max-width:280px;">Clean tables &amp; chair, would rent again! Business owner was very kind and accommodating.</td>
+          <td>2 weeks ago</td>
+          <td>
+            <label class="checkbox-row" style="gap:0.4rem;">
+              <input type="checkbox" checked onchange="toggleFeatured(this)">
+              <span class="featured-badge">Featured</span>
+            </label>
+          </td>
+          <td><a class="btn btn-secondary btn-small" href="admin-review-edit.html">Edit</a> <button class="btn-danger btn-small" style="border:none; background:none;" onclick="if(confirm('Delete this review? This cannot be undone.')) this.closest('tr').remove()">Delete</button></td>
+        </tr>
+        <tr>
+          <td>Kayla Ann Minshall</td>
+          <td><span class="review-stars" style="font-size:0.85rem;">★★★★★</span></td>
+          <td style="max-width:280px;">Service was amazing. Sheryl help me for a next day rental. Table covers were nicely packed&hellip;</td>
+          <td>3 weeks ago</td>
+          <td>
+            <label class="checkbox-row" style="gap:0.4rem;">
+              <input type="checkbox" checked onchange="toggleFeatured(this)">
+              <span class="featured-badge">Featured</span>
+            </label>
+          </td>
+          <td><a class="btn btn-secondary btn-small" href="admin-review-edit.html">Edit</a> <button class="btn-danger btn-small" style="border:none; background:none;" onclick="if(confirm('Delete this review? This cannot be undone.')) this.closest('tr').remove()">Delete</button></td>
+        </tr>
+        <tr>
+          <td>Kenny Dang</td>
+          <td><span class="review-stars" style="font-size:0.85rem;">★★★★★</span></td>
+          <td style="max-width:280px;">Shirl was great! Her communication was great and highly recommend to others!&hellip;</td>
+          <td>a month ago</td>
+          <td>
+            <label class="checkbox-row" style="gap:0.4rem;">
+              <input type="checkbox" checked onchange="toggleFeatured(this)">
+              <span class="featured-badge">Featured</span>
+            </label>
+          </td>
+          <td><a class="btn btn-secondary btn-small" href="admin-review-edit.html">Edit</a> <button class="btn-danger btn-small" style="border:none; background:none;" onclick="if(confirm('Delete this review? This cannot be undone.')) this.closest('tr').remove()">Delete</button></td>
+        </tr>
+        <tr>
+          <td>Season Rahm</td>
+          <td><span class="review-stars" style="font-size:0.85rem;">★★★★★</span></td>
+          <td style="max-width:280px;">I had such a great experience with this party rental business! I rented chairs&hellip;</td>
+          <td>Edited 2 months ago</td>
+          <td>
+            <label class="checkbox-row" style="gap:0.4rem;">
+              <input type="checkbox" checked onchange="toggleFeatured(this)">
+              <span class="featured-badge">Featured</span>
+            </label>
+          </td>
+          <td><a class="btn btn-secondary btn-small" href="admin-review-edit.html">Edit</a> <button class="btn-danger btn-small" style="border:none; background:none;" onclick="if(confirm('Delete this review? This cannot be undone.')) this.closest('tr').remove()">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="color:var(--color-text-muted); font-size:0.85rem; margin-top:1.5rem;">Note: this list is seeded with Bells Bliss N More's real current Google reviews. In the real product, "Add New Review" would need a decision on sourcing — manually entered by the admin (e.g., copied from Google) vs. a live Google Business API integration — that's a `/tech-design` question, not a UX one.</p>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>Bells Bliss N More Admin · Internal use only</p>
+    <p class="proto-map-link"><a href="prototype-map.html">Prototype Map (for review)</a></p>
+  </div>
+</footer>
+
+<script>
+  function toggleFeatured(checkbox) {
+    var label = checkbox.parentElement;
+    var badge = label.querySelector('span');
+    if (checkbox.checked) {
+      badge.className = 'featured-badge';
+      badge.textContent = 'Featured';
+    } else {
+      badge.className = 'not-featured-badge';
+      badge.textContent = 'Not featured';
+    }
+  }
+</script>
+</body>
+</html>
