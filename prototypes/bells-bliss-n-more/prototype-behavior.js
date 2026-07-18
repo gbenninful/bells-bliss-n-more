@@ -15,6 +15,22 @@ function showToast(message) {
   setTimeout(function () { toast.classList.remove('show'); }, 1800);
 }
 
+// --- Hero config: admin-editable override, layered on top of content-data.js's default ---
+var HERO_CONFIG_KEY = 'bbnm_hero_config_override';
+function getEffectiveHeroConfig() {
+  var saved = localStorage.getItem(HERO_CONFIG_KEY);
+  if (saved) {
+    try { return Object.assign({}, heroConfig, JSON.parse(saved)); } catch (e) { /* fall through to default */ }
+  }
+  return heroConfig;
+}
+function saveHeroConfigOverride(config) {
+  localStorage.setItem(HERO_CONFIG_KEY, JSON.stringify(config));
+}
+function resetHeroConfigOverride() {
+  localStorage.removeItem(HERO_CONFIG_KEY);
+}
+
 // --- Auth state ("Hello, Sign in" / "Hello, Maria" in the header, Amazon-style) ---
 function isLoggedIn() { return localStorage.getItem('bbnm_logged_in') === '1'; }
 function getUserName() { return localStorage.getItem('bbnm_user_name') || 'Maria'; }

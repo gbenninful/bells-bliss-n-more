@@ -196,11 +196,12 @@
 <script src="prototype-behavior.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('hero-headline').textContent = heroConfig.headline;
-    document.getElementById('hero-subhead').textContent = heroConfig.subhead;
+    var effectiveHero = getEffectiveHeroConfig();
+    document.getElementById('hero-headline').textContent = effectiveHero.headline;
+    document.getElementById('hero-subhead').textContent = effectiveHero.subhead;
     var hero = document.getElementById('hero');
     var heroInner = document.getElementById('hero-inner');
-    if (heroConfig.layout === 'full-width') {
+    if (effectiveHero.layout === 'full-width') {
       hero.classList.add('hero-full-width');
       var bgSvg = heroInner.querySelector('svg').cloneNode(true);
       var bg = document.createElement('div');
@@ -208,7 +209,7 @@
       bg.appendChild(bgSvg);
       var overlay = document.createElement('div');
       overlay.className = 'hero-overlay';
-      overlay.style.opacity = heroConfig.overlayOpacity;
+      overlay.style.opacity = effectiveHero.overlayOpacity;
       var content = heroInner.querySelector('div');
       content.classList.add('hero-v3-content');
       hero.innerHTML = '';
@@ -216,7 +217,7 @@
       hero.appendChild(overlay);
       hero.appendChild(content);
     } else {
-      var ratio = heroConfig.splitRatio.split(':').map(Number);
+      var ratio = effectiveHero.splitRatio.split(':').map(Number);
       heroInner.style.gridTemplateColumns = ratio[0] + 'fr ' + ratio[1] + 'fr';
     }
 
