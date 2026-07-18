@@ -178,7 +178,6 @@ main { max-width: 1100px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
 
 .home-scroll-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
 .home-scroll-card { background: #fff; border: 1px solid var(--color-border); }
-.home-scroll-card .card-media { height: 160px; font-size: 4.5rem; }
 .home-scroll-card-body { padding: 1.1rem 1.2rem 1.4rem; }
 .home-scroll-card-body h3 { margin: 0 0 0.5rem; font-size: 1rem; }
 @media (max-width: 900px) { .home-scroll-row { grid-template-columns: repeat(2, 1fr); } }
@@ -227,12 +226,12 @@ main { max-width: 1100px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
   flex-direction: column;
 }
 .card-media {
-  height: 150px;
+  height: 160px;
   background: var(--color-accent-light);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2.2rem;
+  font-size: 4.5rem;
 }
 .card-body { padding: 1rem 1.1rem 1.25rem; display: flex; flex-direction: column; gap: 0.5rem; flex: 1; }
 .card-body h3 { margin: 0; font-size: 1.05rem; }
