@@ -20,6 +20,12 @@ var popularRentals = [
 // Newest first. rating is 1-5; renderStars() draws the correct number of filled/empty stars from it.
 var reviews = [
   {
+    name: 'George E.',
+    rating: 5,
+    date: 'Today',
+    text: 'Bells Bliss N More hosted and planned my son Brody’s high school graduation party from start to finish, and it turned into an unforgettable day for our family. Brody is the first cousin to graduate high school, so I wanted the celebration to set a special benchmark for the younger kids. Shirley-Nita delivered completely. As a parent juggling a demanding job and multiple kids’ schedules, I had zero time or bandwidth for event planning. Having her take full ownership and host the event at her venue was a massive weight off my shoulders. Her pricing was the most affordable option I found anywhere, delivering exceptional quality on a real budget. Everything was executed flawlessly. The rental equipment and setup at her location were spotless and in pristine condition. She communicated proactively and operated with strict punctuality. Her high level of organization and intentionality showed in every detail. What truly set her apart was the personal touch. She gathered photos of Brody across every stage of his life, created a video album, and played it on a screen during the party. Watching his growth from childhood to a college-bound young adult was a deeply moving moment for our whole family. The food she cooked and served was delicious, the music set the perfect tone, and the atmosphere was purely celebratory. This may be the last big party I throw for him before college, and Shirley-Nita made sure it was one we will cherish for years. I will without a doubt be booking Bells Bliss N More for our future milestone events!'
+  },
+  {
     name: 'Viki Filovets',
     rating: 5,
     date: 'a week ago',
